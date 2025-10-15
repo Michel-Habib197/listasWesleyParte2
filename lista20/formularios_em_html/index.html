@@ -1,0 +1,38 @@
+<!-- 2. Formulários (<form>) são elementos HTML usados para coletar dados do usuário.
+Elementos como <input>, <textarea> e <select> permitem diferentes tipos de entrada
+em um formulário. Desenvolva um formulário HTML que permita ao usuário cadastrar-
+se em um evento cultural, incluindo campos para nome, e-mail, tipo de ingresso e uma
+área para observações. -->
+<!DOCTYPE html>
+<html lang="pt-bt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 20 exercicio 2</title>
+</head>
+<body>
+    <header>Cadastro para o jogo do ET de Varginha</header>
+
+    <article>
+        <p>
+            Nome: <span><input type="text"></span>
+        </p>
+        <p>
+            e-mail: <span><input type="email"></span>
+        </p>
+        <p>
+            Tipo de ingresso: <span> 
+                <select name="tipoIngresso" id="tipo">
+                    <option value="inteira">Inteira</option>
+                    <option value="meia">Meia</option>
+                </select>
+            </span>
+        </p>
+
+        <p>
+            Observações: <span><textarea name="Observacoes" rows="1" cols="30"></textarea></span>
+        </p>
+
+    </article>
+</body>
+</html>
