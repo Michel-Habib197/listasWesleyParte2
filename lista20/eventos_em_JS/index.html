@@ -1,0 +1,22 @@
+<!-- 7. Eventos permitem interações com o usuário, como cliques, teclas pressionadas e envio
+de formulários. Crie um código JavaScript que exiba um alerta com o texto "Formulário
+enviado!" quando um formulário for submetido. -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 20 exercicio 7</title>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <form onsubmit="enviarFormulario(event)">
+        <input type="text" placeholder="Digite algo" required>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+
+</html>

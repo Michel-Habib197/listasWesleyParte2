@@ -1,0 +1,21 @@
+<!-- 8. Validar dados antes do envio evita erros e melhora a experiência do usuário. Pode ser
+feito com HTML e JavaScript. Desenvolva um código JavaScript que verifique se o
+campo de e-mail de um formulário está preenchido corretamente antes de permitir o
+envio. -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 20 exercicio 8</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <form onsubmit="validarEmail(event)">
+        <label for="e-mail">E-mail:</label>
+        <input type="email" id="email" placeholder="Digite seu e-mail">
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

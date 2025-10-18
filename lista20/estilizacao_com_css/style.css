@@ -1,0 +1,15 @@
+*{
+    font-size: 62.5%;
+}
+
+.botao{
+    background-color: blue;
+    color: green;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.botao:hover{
+    background-color: green;
+    color: blue
+}

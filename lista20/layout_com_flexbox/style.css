@@ -1,0 +1,35 @@
+.titulo{
+    display: flex;
+    justify-content: center;
+}
+
+.caixas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10rem;
+    margin: auto;
+    color: whitesmoke;
+    font-weight: bolder;
+}
+
+.caixa1{
+    background-color: red;
+    border-radius: 0.5rem; 
+    padding: 5rem;
+    margin: auto;
+}
+
+.caixa2{
+    background-color: green;
+    border-radius: 0.5rem; 
+    padding: 5rem;
+    margin: auto;
+}
+
+.caixa3{
+    background-color: blue;
+    border-radius: 0.5rem; 
+    padding: 5rem;
+    margin: auto;
+}
