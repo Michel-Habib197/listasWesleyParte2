@@ -1,0 +1,4 @@
+ss12. O hook useState permite adicionar estado a componentes funcionais no React. Em
+Next.js, ele é usado da mesma forma que no React puro. Desenvolva um componente
+funcional em Next.js que exiba um contador. O contador deve começar em 0 e ser
+incrementado a cada vez que o usuário clicar em um botão.
