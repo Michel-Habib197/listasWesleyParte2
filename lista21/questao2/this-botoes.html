@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo visual de this</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+            margin-top: 60px;
+        }
+
+        button {
+            background-color: #6200ea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background-color: #3700b3;
+        }
+
+        #resultado {
+            margin-top: 40px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Testando o comportamento do <code>this</code></h1>
+
+    <button id="btnNormal">Função Normal</button>
+    <button id="btnArrow">Arrow Function</button>
+
+    <div id="resultado">Clique em um botão e veja o resultado aqui 👇</div>
+
+    <script>
+        // -----------------------------------
+        // 1️⃣ Criamos um objeto representando um botão "inteligente"
+        // -----------------------------------
+        const botao = {
+            nome: "Botão Inteligente",
+
+            // Método com função normal
+            clicarNormal: function () {
+                console.log("👉 [Função normal] this.id =", this.id);
+                document.getElementById('resultado').textContent =
+                    `Função normal: o this representa o próprio botão (${this.id}).`;
+            },
+
+            // Método com arrow function
+            clicarArrow: () => {
+                console.log("👉 [Arrow function] this.id =", this.id);
+                document.getElementById('resultado').textContent =
+                    `Arrow function: o this NÃO representa o botão (this.id = ${this.id}).`;
+            }
+        };
+
+        // -----------------------------------
+        // 2️⃣ Pegamos os botões do DOM
+        // -----------------------------------
+        const btnNormal = document.getElementById("btnNormal");
+        const btnArrow = document.getElementById("btnArrow");
+
+        // -----------------------------------
+        // 3️⃣ Adicionamos ouvintes de evento
+        // -----------------------------------
+        // A função normal tem seu próprio this → o botão
+        btnNormal.addEventListener("click", function () {
+            botao.clicarNormal.call(this); // chamamos com o this = botão
+        });
+
+        // A arrow function herda o this do contexto global → window
+        btnArrow.addEventListener("click", () => {
+            botao.clicarArrow(); // this não é o botão, é o escopo global
+        });
+    </script>
+</body>
+
+</html>

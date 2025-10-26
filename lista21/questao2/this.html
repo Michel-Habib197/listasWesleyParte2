@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Diferença entre Função Normal e Arrow Function</title>
+</head>
+<body>
+  <h1>Abra o console (F12 → Aba Console)</h1>
+  <script>
+    // ----------------------------
+    // Exemplo 1: Dentro de um objeto
+    // ----------------------------
+    const pessoa = {
+      nome: "Michel",
+      falarNormal: function() {
+        console.log("função normal → this.nome =", this.nome);
+      },
+      falarArrow: () => {
+        console.log("arrow function → this.nome =", this.nome);
+      }
+    };
+
+    console.log("===== Exemplo 1: Dentro de um objeto =====");
+    pessoa.falarNormal(); // ✅ "Michel"
+    pessoa.falarArrow();  // ❌ undefined (this vem do escopo global)
+
+    // ----------------------------
+    // Exemplo 2: Callback dentro de setTimeout
+    // ----------------------------
+    const usuario = {
+      nome: "Habib",
+      saudacaoNormal: function() {
+        setTimeout(function() {
+          console.log("setTimeout (função normal) → this.nome =", this.nome);
+        }, 500);
+      },
+      saudacaoArrow: function() {
+        setTimeout(() => {
+          console.log("setTimeout (arrow function) → this.nome =", this.nome);
+        }, 1000);
+      }
+    };
+
+    console.log("===== Exemplo 2: Dentro de setTimeout =====");
+    usuario.saudacaoNormal(); // ❌ this se perde → undefined
+    usuario.saudacaoArrow();  // ✅ mantém o this → "Habib"
+
+    // ----------------------------
+    // Exemplo 3: Fora de qualquer objeto
+    // ----------------------------
+    console.log("===== Exemplo 3: Escopo global =====");
+
+    function normalGlobal() {
+      console.log("função normal global → this =", this);
+    }
+
+    const arrowGlobal = () => {
+      console.log("arrow function global → this =", this);
+    };
+
+    normalGlobal(); // depende do modo (window ou undefined)
+    arrowGlobal();  // herda o this do escopo (geralmente window ou undefined)
+  </script>
+</body>
+</html>

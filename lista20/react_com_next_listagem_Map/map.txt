@@ -1,0 +1,4 @@
+13. O método .map() é usado para iterar sobre arrays (vetores) e renderizar elementos
+dinamicamente em React. É útil para exibir listas de dados como produtos, usuários ou
+postagens. Crie um componente funcional em Next.js que receba uma lista de nomes e
+exiba cada nome dentro de um item de lista (<li>), utilizando o método .map().

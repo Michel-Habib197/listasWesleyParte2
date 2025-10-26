@@ -1,0 +1,3 @@
+14. O React Native utiliza Flexbox como principal sistema de layout, permitindo organizar
+elementos de forma responsiva em dispositivos móveis. Crie um componente em React Native que exiba três caixas coloridas
+lado a lado, centralizadas horizontalmente e com espaçamento entre elas.
